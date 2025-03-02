@@ -1,14 +1,14 @@
 package com.example.franco_rojas_20250303
 
-import android.content.Intent // Importar Intent
-import android.content.SharedPreferences // Importar SharedPreferences
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.franco_rojas_20250303.adapter.BitcoinAdapter
 import com.example.franco_rojas_20250303.viewmodel.BitcoinViewModel
-import com.example.franco_rojas_20250303.databinding.ActivityMainBinding // Import ViewBinding
+import com.example.franco_rojas_20250303.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        // Inflamos el layout con View Binding
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         sharedPreferences = getSharedPreferences("MyWalletPrefs", MODE_PRIVATE)
 
-        // Recuperamos el nombre de usuario desde SharedPreferences
+        // Recuperacion del nombre de usuario desde SharedPreferences
         val username = sharedPreferences.getString("username", "Usuario") // Valor por defecto "Usuario"
 
         // Actualizamos el saludo con el nombre del usuario
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter = BitcoinAdapter(emptyList())
 
-        // Usamos binding.recyclerView en lugar de recyclerView directamente
+        // Se usa binding.recyclerView en lugar de recyclerView directamente
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
 

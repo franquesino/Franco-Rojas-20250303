@@ -23,7 +23,7 @@ class BitcoinViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<BitcoinResponse>, t: Throwable) {
-                // Manejo de error (puedes agregar un mensaje de error si lo deseas)
+
             }
         })
     }

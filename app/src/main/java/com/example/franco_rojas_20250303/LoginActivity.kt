@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
 
-            if (username.isNotEmpty() && password == "1234") { // Validación básica
+            if (username.isNotEmpty() && password == "1234") { // Verifiación básica
                 with(sharedPreferences.edit()) {
                     putString("username", username)
                     putBoolean("isLoggedIn", true)
