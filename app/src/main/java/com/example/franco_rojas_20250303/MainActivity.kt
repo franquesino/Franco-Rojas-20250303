@@ -29,6 +29,14 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("MyWalletPrefs", MODE_PRIVATE)
 
+        // Recuperamos el nombre de usuario desde SharedPreferences
+        val username = sharedPreferences.getString("username", "Usuario") // Valor por defecto "Usuario"
+
+        // Actualizamos el saludo con el nombre del usuario
+        binding.tvWelcome.text = "Bienvenido, $username"
+
+
+
 
         val btnLogout = binding.btnLogout // Referencia al botón de logout
 
